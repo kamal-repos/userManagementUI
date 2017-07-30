@@ -1,0 +1,25 @@
+<h2>List of Users</h2>
+<div class="container">
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Id</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Gender</th>
+      <th>PhoneNumber</th>
+      <th>EmailId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.phoneNumber}}</td>
+        <td>{{user.emailId}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
