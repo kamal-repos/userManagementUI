@@ -1,25 +1,59 @@
-<h2>List of Users</h2>
-<div class="container">
-<table class="table">
-  <thead class="thead-inverse">
-    <tr>
-      <th>Id</th>
-      <th>FirstName</th>
-      <th>LastName</th>
-      <th>Gender</th>
-      <th>PhoneNumber</th>
-      <th>EmailId</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-        <td>{{user.id}}</td>
-        <td>{{user.firstName}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.gender}}</td>
-        <td>{{user.phoneNumber}}</td>
-        <td>{{user.emailId}}</td>
-    </tr>
-  </tbody>
-</table>
+ <!-- searching users -->
+ <div class="container">
+  <form>
+    <div class="form-group">
+      <div class="form-group row">
+        <label for="id-input" class="col-2 col-form-label">Id</label>
+        <div class="col-3">
+          <input class="form-control" type="text" value="" id="id-input">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="first-name-input" class="col-2 col-form-label">First Name</label>
+        <div class="col-3">
+          <input class="form-control" type="text" value="" id="first-name-input">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="last-name-input" class="col-2 col-form-label">Last Name</label>
+        <div class="col-3">
+          <input class="form-control" type="text" value="" id="last-name-input">
+        </div>
+      </div>
+      <br>
+      <input type="submit" class="btn btn-success" value="Search">
+    </div>
+  </form>
+  <button class="btn btn-success" (click)="searchAllUsers()">Search All</button>
+  <button class="btn btn-success" (click)="resetSearchUsers()">Reset Search</button>
+</div>
+ 
+ 
+ <!-- showing list of users -->
+  <div class="container" *ngIf="showUsers">
+  <h2 style="text-align:center">List of Users</h2>
+  <div class="container">
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Id</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Gender</th>
+          <th>PhoneNumber</th>
+          <th>EmailId</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>{{user.emailId}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

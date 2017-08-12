@@ -9,17 +9,24 @@ import { DataService } from '../../services/data.service';
 export class UserComponent implements OnInit {
 
   users:User[];
+  showUsers:boolean = false;
  
- constructor(private dataService:DataService){
-  console.log('constructor ran..');
- }
+  constructor(private dataService:DataService){}
 
- ngOnInit(){
-   this.dataService.getUsers().subscribe((users) => {
-     //console.log(users);
-     this.users = users;
-   });
- }
+  ngOnInit(){
+
+  }
+
+  searchAllUsers(){
+      this.showUsers = true;
+      this.dataService.getUsers().subscribe((users) => {
+      this.users = users;
+    });
+  }
+
+  resetSearchUsers(){
+    this.showUsers = false;
+  }
 
 }
 
